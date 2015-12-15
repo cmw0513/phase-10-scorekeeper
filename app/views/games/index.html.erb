@@ -3,5 +3,5 @@ Games
 
 Completed Games
 <% @games.each do |game|%>
-  <%= game.created_at %> - Winner: Christina
+  <%= game.created_at %> - Winner: <%= game.winner %>
 <% end %>
