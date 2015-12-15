@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :games, only: [:index, :show, :new, :create] do
-    resources :scores, only: [:new, :create]
-    resources :rounds, only: [:new, :create]
+    resources :scores, only: [:new, :create] do
+      resources :rounds, only: [:new, :create]
+    end
   end
 
   #root to: 'pages#home'
