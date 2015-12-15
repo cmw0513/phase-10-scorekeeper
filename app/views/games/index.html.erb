@@ -1,0 +1,7 @@
+Games
+<%= link_to "Start a new game!", new_game_path %>
+
+Completed Games
+<% @games.each do |game|%>
+  <%= game.created_at %> - Winner: Christina
+<% end %>

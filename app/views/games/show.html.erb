@@ -1,0 +1,7 @@
+<%= @game.created_at %>
+Players:
+<% @scores.each do |score| %>
+<%= score.player %>: Phase <%= score.phase %>, <%= score.point_count %> points
+<% end %>
+
+<%= link_to "Add a Player", new_game_score_path(@game), class: "btn btn-primary" %>
