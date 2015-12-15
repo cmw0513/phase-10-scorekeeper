@@ -19,4 +19,9 @@ class GamesController < ApplicationController
 
   def create
   end
+
+  def score_round
+    @game = Game.find(params[:id])
+    @scores = @game.scores
+  end
 end

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :games, only: [:index, :show, :new, :create] do
     resources :scores, only: [:new, :create]
+    resources :rounds, only: [:new, :create]
   end
 
   #root to: 'pages#home'

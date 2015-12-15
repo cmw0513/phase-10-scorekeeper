@@ -1,7 +1,9 @@
-<%= @game.created_at %>
-Players:
+<h1>Welcome to Game # <%= @game.id %></h1>
+<h2>Started <%= date_format(@game.created_at) %></h2>
+<h3>Players:</h3>
 <% @scores.each do |score| %>
-<%= score.player %>: Phase <%= score.phase %>, <%= score.point_count %> points
+  <p><%= score.player %>: Phase <%= score.phase %>, <%= score.point_count %> points</p>
 <% end %>
 
-<%= link_to "Add a Player", new_game_score_path(@game), class: "btn btn-primary" %>
+<p><%= link_to "Add a Player", new_game_score_path(@game), class: "btn btn-primary" %></p>
+<p><%= link_to "Score a round", new_game_round_path(@game), class: "btn btn-primary" %></p>
