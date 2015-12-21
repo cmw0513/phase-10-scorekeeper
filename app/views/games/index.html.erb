@@ -1,7 +1,26 @@
-Games
-<%= link_to "Start a new game!", new_game_path %>
-
-Completed Games
-<% @games.each do |game|%>
-  <%= game.created_at %> - Winner: <%= game.winner %>
-<% end %>
+<div class="text-center top-margin bottom-margin">
+<h1 class="slideExpandUp">Phase 10 Scorekeeper</h1>
+<p>Paper is so passé</p>
+<%= link_to "Start a new game!", new_game_path, class: "btn btn-primary" %>
+</div>
+<h4 class="text-center">Recent Games</h4>
+<div class="black-box">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Started</th>
+      <th>Winner</th>
+      <th>Game Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @games.each do |game|%>
+      <tr>
+        <th scope="row"><%= date_format(game.created_at) %></th>
+        <td><%= game.winner %></td>
+        <td>25 min</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

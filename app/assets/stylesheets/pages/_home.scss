@@ -2,3 +2,21 @@
  * SASS code SPECIFIC TO your home page
  * (margin/padding adjustments, background image, etc..)
  * ------------------------------------- */
+.text-center{
+  text-align: center;
+}
+
+.top-margin{
+  margin-top: 100px;
+}
+
+.bottom-margin{
+  margin-bottom: 100px;
+}
+
+.black-box{
+  background-color: #312e2e;
+  color: white;
+  margin-left: 100px;
+  margin-right: 100px;
+}
