@@ -5,7 +5,7 @@
 </div>
 <h4 class="text-center">Recent Games</h4>
 <div class="black-box">
-<table class="table">
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Started</th>
@@ -14,11 +14,11 @@
     </tr>
   </thead>
   <tbody>
-    <% @games.each do |game|%>
+    <% @games.order(created_at: :desc).each do |game|%>
       <tr>
-        <th scope="row"><%= date_format(game.created_at) %></th>
+        <th scope="row"><%= link_to date_format(game.created_at), game_path(game) %></th>
         <td><%= game.winner %></td>
-        <td>25 min</td>
+        <td><%= (game.updated_at - game.created_at)/60 %> minutes</td>
       </tr>
     <% end %>
   </tbody>

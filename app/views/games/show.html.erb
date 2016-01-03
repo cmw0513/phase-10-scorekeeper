@@ -1,10 +1,10 @@
 <h1>Welcome to Game # <%= @game.id %></h1>
 <h2>Started <%= date_format(@game.created_at) %></h2>
 <h3>Players:</h3>
-<% @scores.each do |score| %>
-  <p><%= score.player %>: Phase <%= score.phase %>, <%= score.point_count %> points</p>
-  <p><%= link_to "Score a round", new_game_score_round_path(@game, score), class: "btn btn-primary" %></p>
-<% end %>
+<div id="scores_list">
+  <% @scores.each do |score| %>
+    <%= render 'score_details', score: score, game: @game %>
+  <% end %>
+</div>
 
-<p><%= link_to "Add a Player", new_game_score_path(@game), class: "btn btn-primary" %></p>
-
+<%= render 'scores/new', score: @score, game: @game %>

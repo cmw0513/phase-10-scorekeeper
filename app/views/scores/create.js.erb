@@ -1,0 +1,12 @@
+<% if @score.errors.any? %>
+  $('#new_score').html("<%= j render 'scores/new', score: @score, game: @game %>");
+<% else %>
+  var new_score_details = $("<%= j render 'games/score_details', score: @score, game: @game %>").hide();
+  $('#scores_list').append(new_score_details);
+  new_score_details.slideDown();
+
+  $('#score_player').val('');
+
+  $('.error_notification').hide();
+  $('.error').hide();
+<% end %>

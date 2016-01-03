@@ -1,0 +1,9 @@
+
+<%= simple_form_for([game, score], remote: true) do |f| %>
+  Enter the new player's name
+  <%= f.error_notification %>
+
+  <%= f.input :player %>
+
+  <%= f.button :submit, 'Add Player' %>
+<% end %>

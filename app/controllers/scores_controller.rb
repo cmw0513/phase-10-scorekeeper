@@ -7,10 +7,16 @@ class ScoresController < ApplicationController
   def create
     @game = Game.find(params[:game_id])
     @score = @game.scores.new(score_params)
-    if @score.save!
-      redirect_to game_path(@game)
+    if @score.save
+      respond_to do |format|
+        format.html { redirect_to game_path(@game) }
+        format.js
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+        format.js
+      end
     end
   end
 
